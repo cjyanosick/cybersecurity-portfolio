@@ -1,4 +1,3 @@
-<h1>Staging — under construction</h1>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -367,6 +366,56 @@
       font-size: 0.85rem;
     }
 
+    #gate {
+      max-width: 420px;
+      margin: 120px auto;
+      padding: 35px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    #gate h2 {
+      margin-bottom: 12px;
+    }
+
+    #gate p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    #gate input {
+      width: 100%;
+      padding: 11px;
+      margin-bottom: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+    }
+
+    #gate button {
+      width: 100%;
+      padding: 11px;
+      background: var(--accent);
+      color: #04101c;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #gate button:hover {
+      background: var(--accent-light);
+    }
+
+    #err {
+      color: #ff6b6b !important;
+      margin-top: 12px;
+      display: none;
+    }
+
     @media(max-width: 850px) {
       .nav-links {
         display: none;
@@ -391,424 +440,456 @@
 
 <body>
 
-<nav>
-  <div class="container nav-container">
-    <div class="logo">
-      CY<span>//</span>SECURITY
-    </div>
+  <div id="gate">
+    <h2>Staging Preview</h2>
+    <p>This is a work-in-progress preview. Enter the password to continue.</p>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#work">Featured Work</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <input
+      type="password"
+      id="pw"
+      placeholder="Enter password"
+      onkeydown="if(event.key === 'Enter') checkPw()"
+    >
+
+    <button onclick="checkPw()">Enter</button>
+
+    <p id="err">Incorrect password.</p>
   </div>
-</nav>
 
-<main>
+  <div id="content" style="display:none;">
 
-  <section class="hero">
-    <div class="container">
-
-      <div class="eyebrow">
-        Cybersecurity • Technology Risk • Security Consulting
-      </div>
-
-      <h1>
-        Bridging technical security
-        <span>and business risk.</span>
-      </h1>
-
-      <p>
-        I'm Carter Yanosick, a cybersecurity professional building hands-on
-        experience across networking, system security, cryptography,
-        security operations, cyber risk, and secure software development.
-        My focus is understanding both how technology works and how
-        organizations can make better security decisions around it.
-      </p>
-
-      <div class="buttons">
-        <a class="button button-primary" href="#portfolio">
-          Explore My Work
-        </a>
-
-        <a
-          class="button button-secondary"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio"
-          target="_blank">
-          GitHub Repository
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-
-      <div class="section-label">
-        About
-      </div>
-
-      <h2>Technical capability with business context.</h2>
-
-      <div class="about-grid">
-
-        <div class="about-text">
-          <p>
-            My cybersecurity work spans networking, operating systems,
-            cryptography, security operations, vulnerability concepts,
-            secure development, and hands-on security labs.
-          </p>
-
-          <p>
-            I am particularly interested in technology and cyber risk:
-            understanding technical weaknesses, determining what those
-            weaknesses actually mean to an organization, and communicating
-            security issues in a way that supports effective business
-            decisions.
-          </p>
-
-          <p>
-            This portfolio documents the labs, projects, research, and
-            technical work I continue to build as I develop toward roles
-            across cybersecurity engineering, cyber risk, and security
-            consulting.
-          </p>
+    <nav>
+      <div class="container nav-container">
+        <div class="logo">
+          CY<span>//</span>SECURITY
         </div>
 
-        <div class="focus-card">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#work">Featured Work</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
 
-          <h3>Current Focus</h3>
+    <main>
 
-          <div class="focus-item">
-            <strong>Cyber Risk & Consulting</strong>
-            <span>
-              Risk assessment, security controls, governance,
-              frameworks, and translating technical findings into
-              business impact.
-            </span>
+      <section class="hero">
+        <div class="container">
+
+          <div class="eyebrow">
+            Cybersecurity • Technology Risk • Security Consulting
           </div>
 
-          <div class="focus-item">
-            <strong>Security Engineering</strong>
-            <span>
-              Networking, Linux, security tooling, cryptography,
-              detection, and secure systems.
-            </span>
-          </div>
+          <h1>
+            Bridging technical security
+            <span>and business risk.</span>
+          </h1>
 
-          <div class="focus-item">
-            <strong>Cloud Security</strong>
-            <span>
-              Developing stronger knowledge of cloud architecture,
-              identity, configuration risk, and security controls.
-            </span>
+          <p>
+            I'm Carter Yanosick, a cybersecurity professional building hands-on
+            experience across networking, system security, cryptography,
+            security operations, cyber risk, and secure software development.
+            My focus is understanding both how technology works and how
+            organizations can make better security decisions around it.
+          </p>
+
+          <div class="buttons">
+            <a class="button button-primary" href="#portfolio">
+              Explore My Work
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio"
+              target="_blank">
+              GitHub Repository
+            </a>
           </div>
 
         </div>
+      </section>
 
-      </div>
+      <section id="about">
+        <div class="container">
 
-    </div>
-  </section>
+          <div class="section-label">
+            About
+          </div>
 
-  <section id="skills">
-    <div class="container">
+          <h2>Technical capability with business context.</h2>
 
-      <div class="section-label">
-        Capabilities
-      </div>
+          <div class="about-grid">
 
-      <h2>Skills at a glance.</h2>
+            <div class="about-text">
+              <p>
+                My cybersecurity work spans networking, operating systems,
+                cryptography, security operations, vulnerability concepts,
+                secure development, and hands-on security labs.
+              </p>
 
-      <p class="section-intro">
-        A growing technical foundation supported by hands-on labs,
-        independent research, technical projects, and continued
-        professional development.
-      </p>
+              <p>
+                I am particularly interested in technology and cyber risk:
+                understanding technical weaknesses, determining what those
+                weaknesses actually mean to an organization, and communicating
+                security issues in a way that supports effective business
+                decisions.
+              </p>
 
-      <div class="skills-grid">
+              <p>
+                This portfolio documents the labs, projects, research, and
+                technical work I continue to build as I develop toward roles
+                across cybersecurity engineering, cyber risk, and security
+                consulting.
+              </p>
+            </div>
 
-        <div class="card">
-          <h3>Network Security</h3>
-          <p>
-            TCP/IP, DNS, DHCP, ARP, packet analysis, firewall concepts,
-            network attacks, and defensive controls.
-          </p>
+            <div class="focus-card">
+
+              <h3>Current Focus</h3>
+
+              <div class="focus-item">
+                <strong>Cyber Risk & Consulting</strong>
+                <span>
+                  Risk assessment, security controls, governance,
+                  frameworks, and translating technical findings into
+                  business impact.
+                </span>
+              </div>
+
+              <div class="focus-item">
+                <strong>Security Engineering</strong>
+                <span>
+                  Networking, Linux, security tooling, cryptography,
+                  detection, and secure systems.
+                </span>
+              </div>
+
+              <div class="focus-item">
+                <strong>Cloud Security</strong>
+                <span>
+                  Developing stronger knowledge of cloud architecture,
+                  identity, configuration risk, and security controls.
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Security Tools</h3>
-          <p>
-            Wireshark, Nmap, OpenSSL, Ettercap, SSH, Git, GitHub,
-            and Linux security tooling.
+      <section id="skills">
+        <div class="container">
+
+          <div class="section-label">
+            Capabilities
+          </div>
+
+          <h2>Skills at a glance.</h2>
+
+          <p class="section-intro">
+            A growing technical foundation supported by hands-on labs,
+            independent research, technical projects, and continued
+            professional development.
           </p>
+
+          <div class="skills-grid">
+
+            <div class="card">
+              <h3>Network Security</h3>
+              <p>
+                TCP/IP, DNS, DHCP, ARP, packet analysis, firewall concepts,
+                network attacks, and defensive controls.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Security Tools</h3>
+              <p>
+                Wireshark, Nmap, OpenSSL, Ettercap, SSH, Git, GitHub,
+                and Linux security tooling.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Linux & Systems</h3>
+              <p>
+                Kali Linux, Ubuntu, Windows, command-line administration,
+                SSH, web servers, and system troubleshooting.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Cryptography & PKI</h3>
+              <p>
+                AES, asymmetric cryptography, public/private keys,
+                certificates, TLS, OpenSSL, and PKI concepts.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Cyber Risk & GRC</h3>
+              <p>
+                Security controls, risk communication, governance,
+                compliance concepts, and security frameworks.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Secure Development</h3>
+              <p>
+                Python, Git-based development, secure software concepts,
+                version control, and technical documentation.
+              </p>
+            </div>
+
+          </div>
+
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Linux & Systems</h3>
-          <p>
-            Kali Linux, Ubuntu, Windows, command-line administration,
-            SSH, web servers, and system troubleshooting.
-          </p>
+      <section id="work">
+        <div class="container">
+
+          <div class="section-label">
+            Featured Work
+          </div>
+
+          <h2>Applying technical findings to real security risk.</h2>
+
+          <div class="featured">
+
+            <div class="featured-badge">
+              FEATURED PORTFOLIO PROJECT
+            </div>
+
+            <h3>TLS & Certificate Security Audit</h3>
+
+            <p>
+              This portfolio project evaluates TLS and certificate
+              configurations across multiple public test targets using
+              SSL Labs and command-line validation with OpenSSL.
+              The goal is not just to identify technical findings, but
+              to assess severity, explain potential impact, and document
+              specific remediation steps.
+            </p>
+
+            <div class="tags">
+              <span class="tag">TLS</span>
+              <span class="tag">PKI</span>
+              <span class="tag">OpenSSL</span>
+              <span class="tag">Certificate Analysis</span>
+              <span class="tag">Risk Assessment</span>
+              <span class="tag">Remediation</span>
+            </div>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
+              target="_blank">
+              View TLS Audits
+            </a>
+
+          </div>
+
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Cryptography & PKI</h3>
-          <p>
-            AES, asymmetric cryptography, public/private keys,
-            certificates, TLS, OpenSSL, and PKI concepts.
+      <section id="portfolio">
+        <div class="container">
+
+          <div class="section-label">
+            Repository
+          </div>
+
+          <h2>Explore the portfolio.</h2>
+
+          <p class="section-intro">
+            This repository is organized by security discipline so it can
+            continue growing with new labs, writeups, presentations, and
+            professional development over time.
           </p>
+
+          <div class="portfolio-grid">
+
+            <a
+              class="portfolio-card"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/soc-tools"
+              target="_blank">
+
+              <h3>SOC & Security Operations</h3>
+
+              <p>
+                Detection work, security operations concepts, tools,
+                and SOC-focused projects.
+              </p>
+
+              <span class="arrow">View work →</span>
+            </a>
+
+            <a
+              class="portfolio-card"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/grc"
+              target="_blank">
+
+              <h3>Cyber Risk & GRC</h3>
+
+              <p>
+                Risk, governance, security controls, frameworks,
+                compliance, and consulting-oriented work.
+              </p>
+
+              <span class="arrow">View work →</span>
+            </a>
+
+            <a
+              class="portfolio-card"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/research-and-writeups"
+              target="_blank">
+
+              <h3>Research & Writeups</h3>
+
+              <p>
+                Incident analysis, cybersecurity research,
+                technical explanations, and security observations.
+              </p>
+
+              <span class="arrow">View work →</span>
+            </a>
+
+            <a
+              class="portfolio-card"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
+              target="_blank">
+
+              <h3>TLS & Certificate Audits</h3>
+
+              <p>
+                Certificate analysis, protocol configuration,
+                TLS findings, severity assessments, and remediation.
+              </p>
+
+              <span class="arrow">View work →</span>
+            </a>
+
+            <a
+              class="portfolio-card"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/presentations"
+              target="_blank">
+
+              <h3>Presentations</h3>
+
+              <p>
+                Cybersecurity presentations, technical explanations,
+                and supporting materials.
+              </p>
+
+              <span class="arrow">View work →</span>
+            </a>
+
+            <a
+              class="portfolio-card"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/certifications-and-skills"
+              target="_blank">
+
+              <h3>Skills & Certifications</h3>
+
+              <p>
+                Ongoing documentation of tools, labs,
+                certifications, and professional development.
+              </p>
+
+              <span class="arrow">View tracker →</span>
+            </a>
+
+          </div>
+
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Cyber Risk & GRC</h3>
+      <section>
+        <div class="container philosophy">
+
+          <div class="section-label">
+            Approach
+          </div>
+
+          <blockquote>
+            Strong cybersecurity is not just about finding technical problems.
+            It is about understanding what those problems mean to the
+            organization and helping make better decisions because of them.
+          </blockquote>
+
           <p>
-            Security controls, risk communication, governance,
-            compliance concepts, and security frameworks.
+            My goal is to continue building the technical depth needed to
+            understand security issues while strengthening the risk,
+            communication, and business skills needed to address them effectively.
           </p>
+
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Secure Development</h3>
+      <section id="contact">
+        <div class="container contact">
+
+          <div class="section-label">
+            Contact
+          </div>
+
+          <h2>Connect with me.</h2>
+
           <p>
-            Python, Git-based development, secure software concepts,
-            version control, and technical documentation.
+            This portfolio will continue to grow with new cybersecurity labs,
+            technical projects, research, certifications, and risk-focused work.
           </p>
+
+          <div class="buttons" style="justify-content:center;">
+
+            <a
+              class="button button-primary"
+              href="https://github.com/cjyanosick"
+              target="_blank">
+              GitHub
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="#"
+              target="_blank">
+              LinkedIn
+            </a>
+
+          </div>
+
         </div>
+      </section>
 
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2026 Carter Yanosick • Cybersecurity Portfolio
       </div>
+    </footer>
 
-    </div>
-  </section>
-
-  <section id="work">
-    <div class="container">
-
-      <div class="section-label">
-        Featured Work
-      </div>
-
-      <h2>Applying technical findings to real security risk.</h2>
-
-      <div class="featured">
-
-        <div class="featured-badge">
-          FEATURED PORTFOLIO PROJECT
-        </div>
-
-        <h3>TLS & Certificate Security Audit</h3>
-
-        <p>
-          This portfolio project evaluates TLS and certificate
-          configurations across multiple public test targets using
-          SSL Labs and command-line validation with OpenSSL.
-          The goal is not just to identify technical findings, but
-          to assess severity, explain potential impact, and document
-          specific remediation steps.
-        </p>
-
-        <div class="tags">
-          <span class="tag">TLS</span>
-          <span class="tag">PKI</span>
-          <span class="tag">OpenSSL</span>
-          <span class="tag">Certificate Analysis</span>
-          <span class="tag">Risk Assessment</span>
-          <span class="tag">Remediation</span>
-        </div>
-
-        <a
-          class="button button-secondary"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
-          target="_blank">
-          View TLS Audits
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section id="portfolio">
-    <div class="container">
-
-      <div class="section-label">
-        Repository
-      </div>
-
-      <h2>Explore the portfolio.</h2>
-
-      <p class="section-intro">
-        This repository is organized by security discipline so it can
-        continue growing with new labs, writeups, presentations, and
-        professional development over time.
-      </p>
-
-      <div class="portfolio-grid">
-
-        <a
-          class="portfolio-card"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/soc-tools"
-          target="_blank">
-
-          <h3>SOC & Security Operations</h3>
-
-          <p>
-            Detection work, security operations concepts, tools,
-            and SOC-focused projects.
-          </p>
-
-          <span class="arrow">View work →</span>
-        </a>
-
-        <a
-          class="portfolio-card"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/grc"
-          target="_blank">
-
-          <h3>Cyber Risk & GRC</h3>
-
-          <p>
-            Risk, governance, security controls, frameworks,
-            compliance, and consulting-oriented work.
-          </p>
-
-          <span class="arrow">View work →</span>
-        </a>
-
-        <a
-          class="portfolio-card"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/research-and-writeups"
-          target="_blank">
-
-          <h3>Research & Writeups</h3>
-
-          <p>
-            Incident analysis, cybersecurity research,
-            technical explanations, and security observations.
-          </p>
-
-          <span class="arrow">View work →</span>
-        </a>
-
-        <a
-          class="portfolio-card"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
-          target="_blank">
-
-          <h3>TLS & Certificate Audits</h3>
-
-          <p>
-            Certificate analysis, protocol configuration,
-            TLS findings, severity assessments, and remediation.
-          </p>
-
-          <span class="arrow">View work →</span>
-        </a>
-
-        <a
-          class="portfolio-card"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/presentations"
-          target="_blank">
-
-          <h3>Presentations</h3>
-
-          <p>
-            Cybersecurity presentations, technical explanations,
-            and supporting materials.
-          </p>
-
-          <span class="arrow">View work →</span>
-        </a>
-
-        <a
-          class="portfolio-card"
-          href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/certifications-and-skills"
-          target="_blank">
-
-          <h3>Skills & Certifications</h3>
-
-          <p>
-            Ongoing documentation of tools, labs,
-            certifications, and professional development.
-          </p>
-
-          <span class="arrow">View tracker →</span>
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="container philosophy">
-
-      <div class="section-label">
-        Approach
-      </div>
-
-      <blockquote>
-        Strong cybersecurity is not just about finding technical problems.
-        It is about understanding what those problems mean to the
-        organization and helping make better decisions because of them.
-      </blockquote>
-
-      <p>
-        My goal is to continue building the technical depth needed to
-        understand security issues while strengthening the risk,
-        communication, and business skills needed to address them effectively.
-      </p>
-
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container contact">
-
-      <div class="section-label">
-        Contact
-      </div>
-
-      <h2>Connect with me.</h2>
-
-      <p>
-        This portfolio will continue to grow with new cybersecurity labs,
-        technical projects, research, certifications, and risk-focused work.
-      </p>
-
-      <div class="buttons" style="justify-content:center;">
-
-        <a
-          class="button button-primary"
-          href="https://github.com/cjyanosick"
-          target="_blank">
-          GitHub
-        </a>
-
-        <!-- Replace # with your LinkedIn URL when ready -->
-        <a
-          class="button button-secondary"
-          href="#"
-          target="_blank">
-          LinkedIn
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-    © 2026 Carter Yanosick • Cybersecurity Portfolio
   </div>
-</footer>
+
+  <script>
+    function checkPw() {
+      const entered = document.getElementById('pw').value;
+
+      if (entered === "portfolio2026") {
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      } else {
+        document.getElementById('err').style.display = 'block';
+      }
+    }
+  </script>
 
 </body>
 </html>
