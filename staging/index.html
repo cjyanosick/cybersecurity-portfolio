@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Carter Yanosick | Cybersecurity Portfolio</title>
+  <title>Carter Yanosick | Cybersecurity, Risk & Consulting</title>
 
   <style>
     :root {
-      --bg: #08111f;
-      --bg-light: #0d1b2a;
-      --card: #122236;
-      --border: #1f3a56;
-      --text: #e8eef5;
-      --muted: #9fb1c3;
-      --accent: #4da3ff;
-      --accent-light: #89c2ff;
-      --success: #67d391;
+      --paper: #f4f2ec;
+      --paper-alt: #e9e6dd;
+      --ink: #101214;
+      --muted: #60656a;
+      --blue: #1557ff;
+      --blue-soft: #dfe7ff;
+      --line: #c9c7bf;
+      --white: #ffffff;
+      --dark: #111418;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -31,11 +31,9 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(77,163,255,0.12), transparent 30%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
     }
 
     a {
@@ -43,396 +41,688 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
+    .mono {
+      font-family: "Courier New", Courier, monospace;
     }
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 17, 31, 0.94);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 70px;
-    }
-
-    .logo {
-      font-size: 1.15rem;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      transition: 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-light);
-    }
-
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 0;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: clamp(2.7rem, 7vw, 5rem);
-      line-height: 1.05;
-      max-width: 900px;
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      color: var(--accent);
-    }
-
-    .hero p {
-      max-width: 780px;
-      color: var(--muted);
-      font-size: 1.15rem;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 7px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      transition: 0.2s;
-    }
-
-    .button-primary {
-      background: var(--accent);
-      color: #04101c;
-    }
-
-    .button-primary:hover {
-      transform: translateY(-2px);
-      background: var(--accent-light);
-    }
-
-    .button-secondary {
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .button-secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent-light);
-    }
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-label {
-      color: var(--accent);
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 2px;
-      font-size: 0.8rem;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--muted);
-      margin-bottom: 45px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 50px;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .focus-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 30px;
-    }
-
-    .focus-card h3 {
-      margin-bottom: 18px;
-    }
-
-    .focus-item {
-      margin-bottom: 16px;
-    }
-
-    .focus-item strong {
-      color: var(--accent-light);
-      display: block;
-    }
-
-    .focus-item span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 25px;
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-    }
-
-    .card h3 {
-      color: var(--accent-light);
-      margin-bottom: 12px;
-      font-size: 1.05rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .featured {
-      background: linear-gradient(
-        135deg,
-        rgba(77,163,255,0.12),
-        rgba(18,34,54,0.65)
-      );
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 45px;
-    }
-
-    .featured-badge {
-      display: inline-block;
-      color: var(--success);
-      border: 1px solid rgba(103,211,145,0.35);
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      margin-bottom: 18px;
-    }
-
-    .featured h3 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .featured p {
-      max-width: 820px;
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .tag {
-      padding: 6px 10px;
-      border-radius: 5px;
-      background: rgba(77,163,255,0.10);
-      color: var(--accent-light);
-      font-size: 0.8rem;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .portfolio-card {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 23px;
-      border-radius: 9px;
-      transition: 0.2s;
-    }
-
-    .portfolio-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    .portfolio-card h3 {
-      margin-bottom: 7px;
-    }
-
-    .portfolio-card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .portfolio-card .arrow {
-      display: block;
-      margin-top: 15px;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    .philosophy {
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .philosophy blockquote {
-      font-size: 1.6rem;
-      line-height: 1.5;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .philosophy p {
-      color: var(--muted);
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 25px;
-    }
-
-    footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
+    /* =========================
+       STAGING PASSWORD GATE
+    ========================= */
 
     #gate {
-      max-width: 420px;
-      margin: 120px auto;
-      padding: 35px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark);
+      padding: 30px;
+      color: white;
     }
 
-    #gate h2 {
+    .gate-box {
+      width: min(460px, 100%);
+      border: 1px solid #383c42;
+      padding: 40px;
+    }
+
+    .gate-code {
+      font-family: "Courier New", monospace;
+      color: #87a8ff;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    .gate-box h1 {
+      font-size: 2.1rem;
       margin-bottom: 12px;
     }
 
-    #gate p {
-      color: var(--muted);
-      margin-bottom: 18px;
+    .gate-box p {
+      color: #a6abb2;
+      margin-bottom: 22px;
     }
 
-    #gate input {
+    .gate-box input {
       width: 100%;
-      padding: 11px;
-      margin-bottom: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text);
+      padding: 14px;
+      border: 1px solid #4a4f57;
+      background: #191c20;
+      color: white;
+      margin-bottom: 10px;
+      font-size: 1rem;
     }
 
-    #gate button {
+    .gate-box button {
       width: 100%;
-      padding: 11px;
-      background: var(--accent);
-      color: #04101c;
       border: none;
-      border-radius: 6px;
+      padding: 14px;
+      background: var(--blue);
+      color: white;
       font-weight: bold;
       cursor: pointer;
     }
 
-    #gate button:hover {
-      background: var(--accent-light);
-    }
-
     #err {
-      color: #ff6b6b !important;
-      margin-top: 12px;
       display: none;
+      color: #ff8080;
+      margin-top: 15px;
+      margin-bottom: 0;
     }
 
-    @media(max-width: 850px) {
-      .nav-links {
+    /* =========================
+       SITE STRUCTURE
+    ========================= */
+
+    .site {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    aside {
+      background: var(--dark);
+      color: white;
+      padding: 34px 28px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .brand-code {
+      font-family: "Courier New", monospace;
+      color: #88a8ff;
+      font-size: 0.74rem;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .name {
+      font-size: 1.7rem;
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .role {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #a3a8ae;
+    }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-top: 45px;
+    }
+
+    .side-nav a {
+      font-family: "Courier New", monospace;
+      font-size: 0.75rem;
+      color: #8d9299;
+      transition: 0.2s;
+    }
+
+    .side-nav a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .side-bottom {
+      font-family: "Courier New", monospace;
+      font-size: 0.68rem;
+      color: #666c73;
+      line-height: 1.7;
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    section {
+      padding: 85px 7vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-id {
+      font-family: "Courier New", monospace;
+      color: var(--blue);
+      letter-spacing: 2px;
+      font-size: 0.72rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      letter-spacing: -3px;
+      line-height: 0.98;
+      max-width: 950px;
+      margin-bottom: 35px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 780px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "RISK";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      font-size: clamp(8rem, 22vw, 22rem);
+      font-weight: bold;
+      color: rgba(21, 87, 255, 0.055);
+      line-height: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker {
+      font-family: "Courier New", monospace;
+      color: var(--blue);
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(4rem, 9vw, 8.4rem);
+      line-height: 0.87;
+      letter-spacing: -6px;
+      max-width: 1100px;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-copy {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 790px;
+      margin-bottom: 35px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      font-family: "Courier New", monospace;
+      font-size: 0.76rem;
+      letter-spacing: 1px;
+      padding: 13px 18px;
+      border: 1px solid var(--ink);
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button-dark {
+      background: var(--ink);
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .button-light:hover {
+      background: var(--blue-soft);
+      border-color: var(--blue);
+    }
+
+    /* =========================
+       PROFILE
+    ========================= */
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 75px;
+    }
+
+    .profile-copy p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 1.04rem;
+    }
+
+    .profile-brief {
+      border-top: 4px solid var(--ink);
+    }
+
+    .brief-row {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brief-label {
+      font-family: "Courier New", monospace;
+      color: var(--muted);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .brief-value {
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    /* =========================
+       CONSULTING MODEL
+    ========================= */
+
+    .consulting-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-left: 1px solid var(--ink);
+      border-top: 1px solid var(--ink);
+    }
+
+    .consult-step {
+      min-height: 290px;
+      padding: 28px;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.2s;
+    }
+
+    .consult-step:hover {
+      background: var(--blue-soft);
+    }
+
+    .step-num {
+      font-family: "Courier New", monospace;
+      color: var(--blue);
+      font-size: 0.72rem;
+    }
+
+    .consult-step h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+
+    .consult-step p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       LEADERSHIP
+    ========================= */
+
+    .leadership {
+      background: var(--dark);
+      color: white;
+    }
+
+    .leadership .section-id {
+      color: #8faeff;
+    }
+
+    .leadership .section-title {
+      color: white;
+    }
+
+    .leadership-intro {
+      color: #adb2b9;
+      font-size: 1.06rem;
+      max-width: 780px;
+      margin-bottom: 50px;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #33383f;
+      border: 1px solid #33383f;
+    }
+
+    .leadership-block {
+      background: var(--dark);
+      padding: 32px;
+      min-height: 240px;
+    }
+
+    .leadership-block .mono {
+      color: #88a8ff;
+      font-size: 0.72rem;
+    }
+
+    .leadership-block h3 {
+      margin: 30px 0 12px;
+      font-size: 1.45rem;
+    }
+
+    .leadership-block p {
+      color: #9fa5ac;
+      font-size: 0.92rem;
+    }
+
+    /* =========================
+       TECHNICAL FOUNDATION
+    ========================= */
+
+    .foundation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--ink);
+      border-left: 1px solid var(--ink);
+    }
+
+    .foundation-block {
+      padding: 30px;
+      min-height: 210px;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .foundation-block h3 {
+      font-size: 1.4rem;
+      margin-bottom: 13px;
+    }
+
+    .foundation-block p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 40px;
+    }
+
+    .tool {
+      background: var(--ink);
+      color: white;
+      padding: 7px 10px;
+      font-family: "Courier New", monospace;
+      font-size: 0.7rem;
+    }
+
+    /* =========================
+       CASE STUDY
+    ========================= */
+
+    .case-study {
+      border-top: 5px solid var(--blue);
+      padding-top: 35px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 55px;
+    }
+
+    .case-meta {
+      font-family: "Courier New", monospace;
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.8;
+    }
+
+    .case-content h3 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .case-content > p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 800px;
+      margin-bottom: 35px;
+    }
+
+    .finding-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      margin-bottom: 30px;
+    }
+
+    .finding {
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .finding-label {
+      font-family: "Courier New", monospace;
+      color: var(--blue);
+      font-size: 0.68rem;
+      margin-bottom: 9px;
+    }
+
+    .finding h4 {
+      margin-bottom: 8px;
+    }
+
+    .finding p {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* =========================
+       REPOSITORY
+    ========================= */
+
+    .repo-list {
+      border-top: 1px solid var(--ink);
+    }
+
+    .repo-item {
+      display: grid;
+      grid-template-columns: 55px 1.2fr 1fr 35px;
+      gap: 20px;
+      align-items: center;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+      transition: 0.15s;
+    }
+
+    .repo-item:hover {
+      background: var(--blue-soft);
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .repo-number {
+      color: var(--blue);
+      font-family: "Courier New", monospace;
+      font-size: 0.72rem;
+    }
+
+    .repo-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .repo-description {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* =========================
+       CLOSING STATEMENT
+    ========================= */
+
+    .closing {
+      background: var(--paper-alt);
+    }
+
+    .closing-statement {
+      max-width: 1000px;
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: 1.06;
+      letter-spacing: -3px;
+      margin-bottom: 35px;
+    }
+
+    .closing-statement span {
+      color: var(--blue);
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .contact-headline {
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .contact-links {
+      border-top: 1px solid var(--ink);
+    }
+
+    .contact-links a {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-family: "Courier New", monospace;
+      font-size: 0.77rem;
+    }
+
+    .contact-links a:hover {
+      color: var(--blue);
+    }
+
+    footer {
+      background: var(--dark);
+      color: #737980;
+      padding: 25px 7vw;
+      display: flex;
+      justify-content: space-between;
+      font-family: "Courier New", monospace;
+      font-size: 0.68rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1050px) {
+      .consulting-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .site {
+        display: block;
+      }
+
+      aside {
+        position: relative;
+        height: auto;
+        padding: 22px;
+      }
+
+      .side-nav,
+      .side-bottom {
         display: none;
       }
 
-      .about-grid,
-      .skills-grid,
-      .portfolio-grid {
-        grid-template-columns: 1fr;
+      section {
+        padding: 65px 6vw;
       }
 
       .hero {
-        min-height: auto;
+        min-height: 85vh;
       }
 
-      section {
-        padding: 65px 0;
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .profile-grid,
+      .case-study,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .foundation-grid,
+      .finding-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .repo-item {
+        grid-template-columns: 40px 1fr 30px;
+      }
+
+      .repo-description {
+        display: none;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .consulting-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3.6rem;
+      }
+
+      .section-title,
+      .closing-statement,
+      .contact-headline {
+        letter-spacing: -2px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
       }
     }
   </style>
@@ -440,453 +730,823 @@
 
 <body>
 
+  <!-- STAGING ACCESS -->
+
   <div id="gate">
-    <h2>Staging Preview</h2>
-    <p>This is a work-in-progress preview. Enter the password to continue.</p>
 
-    <input
-      type="password"
-      id="pw"
-      placeholder="Enter password"
-      onkeydown="if(event.key === 'Enter') checkPw()"
-    >
+    <div class="gate-box">
 
-    <button onclick="checkPw()">Enter</button>
+      <div class="gate-code">
+        STAGING // CONTROLLED PREVIEW
+      </div>
 
-    <p id="err">Incorrect password.</p>
+      <h1>Portfolio Preview</h1>
+
+      <p>
+        This version of the portfolio is currently under development.
+        Enter the staging password to continue.
+      </p>
+
+      <input
+        type="password"
+        id="pw"
+        placeholder="Enter password"
+        onkeydown="if(event.key === 'Enter') checkPw()"
+      >
+
+      <button onclick="checkPw()">
+        ENTER
+      </button>
+
+      <p id="err">
+        Access denied. Incorrect password.
+      </p>
+
+    </div>
+
   </div>
+
 
   <div id="content" style="display:none;">
 
-    <nav>
-      <div class="container nav-container">
-        <div class="logo">
-          CY<span>//</span>SECURITY
-        </div>
+    <div class="site">
 
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#work">Featured Work</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </nav>
+      <!-- LEFT IDENTITY PANEL -->
 
-    <main>
+      <aside>
 
-      <section class="hero">
-        <div class="container">
+        <div>
 
-          <div class="eyebrow">
-            Cybersecurity • Technology Risk • Security Consulting
+          <div class="brand-code">
+            CY // CYBER
           </div>
 
-          <h1>
-            Bridging technical security
-            <span>and business risk.</span>
-          </h1>
-
-          <p>
-            I'm Carter Yanosick, a cybersecurity professional building hands-on
-            experience across networking, system security, cryptography,
-            security operations, cyber risk, and secure software development.
-            My focus is understanding both how technology works and how
-            organizations can make better security decisions around it.
-          </p>
-
-          <div class="buttons">
-            <a class="button button-primary" href="#portfolio">
-              Explore My Work
-            </a>
-
-            <a
-              class="button button-secondary"
-              href="https://github.com/cjyanosick/cybersecurity-portfolio"
-              target="_blank">
-              GitHub Repository
-            </a>
+          <div class="name">
+            Carter<br>
+            Yanosick
           </div>
+
+          <div class="role">
+            Cybersecurity<br>
+            Technology Risk<br>
+            Consulting<br>
+            Leadership Development
+          </div>
+
+          <nav class="side-nav">
+            <a href="#profile">01 / PROFILE</a>
+            <a href="#model">02 / CONSULTING MODEL</a>
+            <a href="#leadership">03 / LEADERSHIP</a>
+            <a href="#technical">04 / TECHNICAL</a>
+            <a href="#work">05 / CASE STUDY</a>
+            <a href="#repository">06 / PORTFOLIO</a>
+            <a href="#contact">07 / CONTACT</a>
+          </nav>
 
         </div>
-      </section>
 
-      <section id="about">
-        <div class="container">
+        <div class="side-bottom">
+          CYBERSECURITY PORTFOLIO<br>
+          TECHNOLOGY • RISK • LEADERSHIP<br>
+          2026
+        </div>
 
-          <div class="section-label">
-            About
+      </aside>
+
+
+      <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+          <div class="hero-inner">
+
+            <div class="hero-kicker">
+              Cybersecurity / Technology Risk / Consulting
+            </div>
+
+            <h1>
+              Security is technical.<br>
+              Leadership is knowing
+              <span>what to do next.</span>
+            </h1>
+
+            <p class="hero-copy">
+              I am building my career at the intersection of cybersecurity,
+              technology risk, and consulting — developing the technical depth
+              to understand security issues and the communication,
+              decision-making, and leadership skills required to help
+              organizations respond effectively.
+            </p>
+
+            <div class="actions">
+
+              <a class="button button-dark" href="#work">
+                View Case Study
+              </a>
+
+              <a class="button button-light" href="#repository">
+                Explore Portfolio
+              </a>
+
+            </div>
+
           </div>
 
-          <h2>Technical capability with business context.</h2>
+        </section>
 
-          <div class="about-grid">
 
-            <div class="about-text">
+        <!-- PROFILE -->
+
+        <section id="profile">
+
+          <div class="section-id">
+            01 / PROFILE
+          </div>
+
+          <h2 class="section-title">
+            Technical understanding. Business context. Clear decisions.
+          </h2>
+
+          <div class="profile-grid">
+
+            <div class="profile-copy">
+
               <p>
                 My cybersecurity work spans networking, operating systems,
                 cryptography, security operations, vulnerability concepts,
-                secure development, and hands-on security labs.
+                secure development, cyber risk, and governance.
               </p>
 
               <p>
-                I am particularly interested in technology and cyber risk:
-                understanding technical weaknesses, determining what those
-                weaknesses actually mean to an organization, and communicating
-                security issues in a way that supports effective business
-                decisions.
+                I am especially interested in the point where cybersecurity
+                stops being only a technical issue and becomes a business
+                decision. A finding may be technically serious, but effective
+                security also requires understanding its impact, communicating
+                that impact, prioritizing action, and getting the right people
+                aligned around a response.
               </p>
 
               <p>
-                This portfolio documents the labs, projects, research, and
-                technical work I continue to build as I develop toward roles
-                across cybersecurity engineering, cyber risk, and security
-                consulting.
+                My goal is to continue developing the technical foundation
+                required to understand security problems while building the
+                consulting, communication, and leadership skills needed to
+                help organizations make stronger security decisions.
               </p>
+
             </div>
 
-            <div class="focus-card">
 
-              <h3>Current Focus</h3>
+            <div class="profile-brief">
 
-              <div class="focus-item">
-                <strong>Cyber Risk & Consulting</strong>
-                <span>
-                  Risk assessment, security controls, governance,
-                  frameworks, and translating technical findings into
-                  business impact.
-                </span>
+              <div class="brief-row">
+                <div class="brief-label">Core Discipline</div>
+                <div class="brief-value">Cybersecurity</div>
               </div>
 
-              <div class="focus-item">
-                <strong>Security Engineering</strong>
-                <span>
-                  Networking, Linux, security tooling, cryptography,
-                  detection, and secure systems.
-                </span>
+              <div class="brief-row">
+                <div class="brief-label">Business Focus</div>
+                <div class="brief-value">Technology & Cyber Risk</div>
               </div>
 
-              <div class="focus-item">
-                <strong>Cloud Security</strong>
-                <span>
-                  Developing stronger knowledge of cloud architecture,
-                  identity, configuration risk, and security controls.
-                </span>
+              <div class="brief-row">
+                <div class="brief-label">Professional Direction</div>
+                <div class="brief-value">Security Consulting</div>
+              </div>
+
+              <div class="brief-row">
+                <div class="brief-label">Development Focus</div>
+                <div class="brief-value">Technical + Leadership</div>
               </div>
 
             </div>
 
           </div>
 
-        </div>
-      </section>
+        </section>
 
-      <section id="skills">
-        <div class="container">
 
-          <div class="section-label">
-            Capabilities
+        <!-- CONSULTING MODEL -->
+
+        <section id="model">
+
+          <div class="section-id">
+            02 / HOW I APPROACH SECURITY
           </div>
 
-          <h2>Skills at a glance.</h2>
+          <h2 class="section-title">
+            Assess. Understand. Communicate. Act.
+          </h2>
 
-          <p class="section-intro">
-            A growing technical foundation supported by hands-on labs,
-            independent research, technical projects, and continued
-            professional development.
+          <p class="lead" style="margin-bottom:45px;">
+            Technical findings are more valuable when they lead to informed
+            decisions. This is the mindset I am developing across both
+            technical security work and cyber risk.
           </p>
 
-          <div class="skills-grid">
 
-            <div class="card">
-              <h3>Network Security</h3>
-              <p>
-                TCP/IP, DNS, DHCP, ARP, packet analysis, firewall concepts,
-                network attacks, and defensive controls.
-              </p>
+          <div class="consulting-grid">
+
+            <div class="consult-step">
+
+              <div class="step-num">
+                01 / ASSESS
+              </div>
+
+              <div>
+                <h3>Find the issue.</h3>
+
+                <p>
+                  Examine systems, configurations, controls, traffic,
+                  certificates, vulnerabilities, and other technical evidence.
+                </p>
+              </div>
+
             </div>
 
-            <div class="card">
-              <h3>Security Tools</h3>
-              <p>
-                Wireshark, Nmap, OpenSSL, Ettercap, SSH, Git, GitHub,
-                and Linux security tooling.
-              </p>
+
+            <div class="consult-step">
+
+              <div class="step-num">
+                02 / UNDERSTAND
+              </div>
+
+              <div>
+                <h3>Determine why it matters.</h3>
+
+                <p>
+                  Evaluate severity, exposure, likelihood, potential impact,
+                  affected systems, and the risk created for the organization.
+                </p>
+              </div>
+
             </div>
 
-            <div class="card">
-              <h3>Linux & Systems</h3>
-              <p>
-                Kali Linux, Ubuntu, Windows, command-line administration,
-                SSH, web servers, and system troubleshooting.
-              </p>
+
+            <div class="consult-step">
+
+              <div class="step-num">
+                03 / COMMUNICATE
+              </div>
+
+              <div>
+                <h3>Make the risk clear.</h3>
+
+                <p>
+                  Translate technical findings into language that engineers,
+                  leadership, and business stakeholders can understand.
+                </p>
+              </div>
+
             </div>
 
-            <div class="card">
+
+            <div class="consult-step">
+
+              <div class="step-num">
+                04 / ACT
+              </div>
+
+              <div>
+                <h3>Recommend the next move.</h3>
+
+                <p>
+                  Prioritize remediation, recommend controls, explain tradeoffs,
+                  and support better security decisions.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- LEADERSHIP -->
+
+        <section class="leadership" id="leadership">
+
+          <div class="section-id">
+            03 / CYBER LEADERSHIP
+          </div>
+
+          <h2 class="section-title">
+            Security leadership is more than technical knowledge.
+          </h2>
+
+          <p class="leadership-intro">
+            I am developing leadership skills alongside technical capability
+            because cybersecurity decisions often require coordination,
+            judgment, communication, and the ability to balance security
+            requirements with organizational needs.
+          </p>
+
+
+          <div class="leadership-grid">
+
+            <div class="leadership-block">
+
+              <div class="mono">
+                LEADERSHIP PRINCIPLE / 01
+              </div>
+
+              <h3>Communicate clearly.</h3>
+
+              <p>
+                Technical complexity should not prevent people from
+                understanding the decision in front of them. Strong security
+                communication makes risk understandable without oversimplifying it.
+              </p>
+
+            </div>
+
+
+            <div class="leadership-block">
+
+              <div class="mono">
+                LEADERSHIP PRINCIPLE / 02
+              </div>
+
+              <h3>Prioritize intelligently.</h3>
+
+              <p>
+                Not every finding deserves the same response. Effective
+                cybersecurity requires understanding which risks matter most
+                and where limited time and resources should be focused.
+              </p>
+
+            </div>
+
+
+            <div class="leadership-block">
+
+              <div class="mono">
+                LEADERSHIP PRINCIPLE / 03
+              </div>
+
+              <h3>Turn analysis into action.</h3>
+
+              <p>
+                Identifying a problem is not the finish line. Security work
+                becomes valuable when findings result in better controls,
+                stronger decisions, and measurable improvement.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- TECHNICAL FOUNDATION -->
+
+        <section id="technical">
+
+          <div class="section-id">
+            04 / TECHNICAL FOUNDATION
+          </div>
+
+          <h2 class="section-title">
+            Leadership starts with understanding the technology.
+          </h2>
+
+          <p class="lead" style="margin-bottom:45px;">
+            My focus on risk and consulting is supported by continued hands-on
+            technical development across core cybersecurity disciplines.
+          </p>
+
+
+          <div class="foundation-grid">
+
+            <div class="foundation-block">
+
+              <h3>Network & System Security</h3>
+
+              <p>
+                TCP/IP, DNS, DHCP, ARP, firewall concepts, Linux,
+                Windows, SSH, web servers, packet analysis,
+                and security troubleshooting.
+              </p>
+
+            </div>
+
+
+            <div class="foundation-block">
+
+              <h3>Security Operations</h3>
+
+              <p>
+                Security logs, alerts, detection concepts, network
+                visibility, attack identification, defensive controls,
+                and incident-focused analysis.
+              </p>
+
+            </div>
+
+
+            <div class="foundation-block">
+
               <h3>Cryptography & PKI</h3>
+
               <p>
-                AES, asymmetric cryptography, public/private keys,
-                certificates, TLS, OpenSSL, and PKI concepts.
+                AES, public and private key cryptography, certificates,
+                TLS, certificate chains, PKI, OpenSSL, and secure
+                communication concepts.
               </p>
+
             </div>
 
-            <div class="card">
+
+            <div class="foundation-block">
+
               <h3>Cyber Risk & GRC</h3>
+
               <p>
                 Security controls, risk communication, governance,
-                compliance concepts, and security frameworks.
+                compliance concepts, frameworks, remediation,
+                documentation, and business impact.
               </p>
+
             </div>
 
-            <div class="card">
-              <h3>Secure Development</h3>
+          </div>
+
+
+          <div class="tools">
+
+            <span class="tool">WIRESHARK</span>
+            <span class="tool">NMAP</span>
+            <span class="tool">OPENSSL</span>
+            <span class="tool">LINUX</span>
+            <span class="tool">KALI</span>
+            <span class="tool">UBUNTU</span>
+            <span class="tool">SSH</span>
+            <span class="tool">GIT</span>
+            <span class="tool">GITHUB</span>
+            <span class="tool">PYTHON</span>
+            <span class="tool">TLS</span>
+            <span class="tool">PKI</span>
+
+          </div>
+
+        </section>
+
+
+        <!-- CASE STUDY -->
+
+        <section id="work">
+
+          <div class="section-id">
+            05 / CASE STUDY
+          </div>
+
+          <div class="case-study">
+
+            <div class="case-meta">
+              ENGAGEMENT TYPE<br>
+              SECURITY ASSESSMENT<br><br>
+
+              DOMAIN<br>
+              TLS / PKI<br><br>
+
+              METHOD<br>
+              TECHNICAL + RISK<br><br>
+
+              STATUS<br>
+              IN DEVELOPMENT
+            </div>
+
+
+            <div class="case-content">
+
+              <h3>
+                TLS & Certificate Security Assessment
+              </h3>
+
               <p>
-                Python, Git-based development, secure software concepts,
-                version control, and technical documentation.
+                A comparative security review of TLS and certificate
+                configurations across multiple targets. The project combines
+                technical validation with risk-based analysis to demonstrate
+                how a security finding can move from raw technical evidence
+                to a clear recommendation.
               </p>
+
+
+              <div class="finding-grid">
+
+                <div class="finding">
+
+                  <div class="finding-label">
+                    01 / FINDING
+                  </div>
+
+                  <h4>What did I observe?</h4>
+
+                  <p>
+                    Review certificate condition, supported protocols,
+                    cryptographic configuration, and other TLS findings.
+                  </p>
+
+                </div>
+
+
+                <div class="finding">
+
+                  <div class="finding-label">
+                    02 / RISK
+                  </div>
+
+                  <h4>Why does it matter?</h4>
+
+                  <p>
+                    Determine severity, attack opportunity, exposure,
+                    and the possible impact on confidentiality or trust.
+                  </p>
+
+                </div>
+
+
+                <div class="finding">
+
+                  <div class="finding-label">
+                    03 / RECOMMENDATION
+                  </div>
+
+                  <h4>What should change?</h4>
+
+                  <p>
+                    Document a specific technical remediation and explain
+                    how the recommendation reduces the identified risk.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <a
+                class="button button-light"
+                href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
+                target="_blank">
+                Open Case Study →
+              </a>
+
             </div>
 
           </div>
 
-        </div>
-      </section>
+        </section>
 
-      <section id="work">
-        <div class="container">
 
-          <div class="section-label">
-            Featured Work
+        <!-- REPOSITORY -->
+
+        <section id="repository">
+
+          <div class="section-id">
+            06 / PORTFOLIO
           </div>
 
-          <h2>Applying technical findings to real security risk.</h2>
+          <h2 class="section-title">
+            Evidence behind the profile.
+          </h2>
 
-          <div class="featured">
 
-            <div class="featured-badge">
-              FEATURED PORTFOLIO PROJECT
-            </div>
-
-            <h3>TLS & Certificate Security Audit</h3>
-
-            <p>
-              This portfolio project evaluates TLS and certificate
-              configurations across multiple public test targets using
-              SSL Labs and command-line validation with OpenSSL.
-              The goal is not just to identify technical findings, but
-              to assess severity, explain potential impact, and document
-              specific remediation steps.
-            </p>
-
-            <div class="tags">
-              <span class="tag">TLS</span>
-              <span class="tag">PKI</span>
-              <span class="tag">OpenSSL</span>
-              <span class="tag">Certificate Analysis</span>
-              <span class="tag">Risk Assessment</span>
-              <span class="tag">Remediation</span>
-            </div>
+          <div class="repo-list">
 
             <a
-              class="button button-secondary"
-              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
-              target="_blank">
-              View TLS Audits
-            </a>
-
-          </div>
-
-        </div>
-      </section>
-
-      <section id="portfolio">
-        <div class="container">
-
-          <div class="section-label">
-            Repository
-          </div>
-
-          <h2>Explore the portfolio.</h2>
-
-          <p class="section-intro">
-            This repository is organized by security discipline so it can
-            continue growing with new labs, writeups, presentations, and
-            professional development over time.
-          </p>
-
-          <div class="portfolio-grid">
-
-            <a
-              class="portfolio-card"
+              class="repo-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/soc-tools"
               target="_blank">
 
-              <h3>SOC & Security Operations</h3>
+              <div class="repo-number">01</div>
 
-              <p>
-                Detection work, security operations concepts, tools,
-                and SOC-focused projects.
-              </p>
+              <div class="repo-title">
+                Security Operations
+              </div>
 
-              <span class="arrow">View work →</span>
+              <div class="repo-description">
+                Detection, security tooling, defensive controls,
+                and SOC-focused work.
+              </div>
+
+              <div>↗</div>
+
             </a>
 
+
             <a
-              class="portfolio-card"
+              class="repo-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/grc"
               target="_blank">
 
-              <h3>Cyber Risk & GRC</h3>
+              <div class="repo-number">02</div>
 
-              <p>
-                Risk, governance, security controls, frameworks,
-                compliance, and consulting-oriented work.
-              </p>
+              <div class="repo-title">
+                Cyber Risk & GRC
+              </div>
 
-              <span class="arrow">View work →</span>
+              <div class="repo-description">
+                Risk, governance, frameworks, controls,
+                compliance, and consulting-oriented analysis.
+              </div>
+
+              <div>↗</div>
+
             </a>
 
+
             <a
-              class="portfolio-card"
+              class="repo-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/research-and-writeups"
               target="_blank">
 
-              <h3>Research & Writeups</h3>
+              <div class="repo-number">03</div>
 
-              <p>
-                Incident analysis, cybersecurity research,
-                technical explanations, and security observations.
-              </p>
+              <div class="repo-title">
+                Research & Analysis
+              </div>
 
-              <span class="arrow">View work →</span>
+              <div class="repo-description">
+                Cybersecurity research, incidents, technical explanations,
+                and written analysis.
+              </div>
+
+              <div>↗</div>
+
             </a>
 
+
             <a
-              class="portfolio-card"
+              class="repo-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
               target="_blank">
 
-              <h3>TLS & Certificate Audits</h3>
+              <div class="repo-number">04</div>
 
-              <p>
-                Certificate analysis, protocol configuration,
-                TLS findings, severity assessments, and remediation.
-              </p>
+              <div class="repo-title">
+                TLS Security Assessments
+              </div>
 
-              <span class="arrow">View work →</span>
+              <div class="repo-description">
+                Technical findings, severity analysis,
+                risk impact, and remediation.
+              </div>
+
+              <div>↗</div>
+
             </a>
 
+
             <a
-              class="portfolio-card"
+              class="repo-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/presentations"
               target="_blank">
 
-              <h3>Presentations</h3>
+              <div class="repo-number">05</div>
 
-              <p>
-                Cybersecurity presentations, technical explanations,
-                and supporting materials.
-              </p>
+              <div class="repo-title">
+                Security Communication
+              </div>
 
-              <span class="arrow">View work →</span>
+              <div class="repo-description">
+                Presentations and technical material designed
+                to communicate cybersecurity concepts clearly.
+              </div>
+
+              <div>↗</div>
+
             </a>
 
+
             <a
-              class="portfolio-card"
+              class="repo-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/certifications-and-skills"
               target="_blank">
 
-              <h3>Skills & Certifications</h3>
+              <div class="repo-number">06</div>
 
-              <p>
-                Ongoing documentation of tools, labs,
-                certifications, and professional development.
-              </p>
+              <div class="repo-title">
+                Professional Development
+              </div>
 
-              <span class="arrow">View tracker →</span>
+              <div class="repo-description">
+                Skills, tools, certifications, labs,
+                and continued cybersecurity development.
+              </div>
+
+              <div>↗</div>
+
             </a>
 
           </div>
 
-        </div>
-      </section>
+        </section>
 
-      <section>
-        <div class="container philosophy">
 
-          <div class="section-label">
-            Approach
+        <!-- CLOSING -->
+
+        <section class="closing">
+
+          <div class="section-id">
+            PROFESSIONAL DIRECTION
           </div>
 
-          <blockquote>
-            Strong cybersecurity is not just about finding technical problems.
-            It is about understanding what those problems mean to the
-            organization and helping make better decisions because of them.
-          </blockquote>
+          <div class="closing-statement">
 
-          <p>
-            My goal is to continue building the technical depth needed to
-            understand security issues while strengthening the risk,
-            communication, and business skills needed to address them effectively.
+            I want to understand the technology well enough to find the issue,
+            understand the organization well enough to recognize the risk,
+            and communicate well enough to
+            <span>help people make the right decision.</span>
+
+          </div>
+
+          <p class="lead">
+            That combination of cybersecurity, risk, consulting, and
+            leadership is the direction I am continuing to build toward.
           </p>
 
-        </div>
-      </section>
+        </section>
 
-      <section id="contact">
-        <div class="container contact">
 
-          <div class="section-label">
-            Contact
+        <!-- CONTACT -->
+
+        <section id="contact">
+
+          <div class="section-id">
+            07 / CONNECT
           </div>
 
-          <h2>Connect with me.</h2>
+          <div class="contact-grid">
 
-          <p>
-            This portfolio will continue to grow with new cybersecurity labs,
-            technical projects, research, certifications, and risk-focused work.
-          </p>
+            <div class="contact-headline">
+              Explore the work.<br>
+              Follow the growth.
+            </div>
 
-          <div class="buttons" style="justify-content:center;">
+            <div class="contact-links">
 
-            <a
-              class="button button-primary"
-              href="https://github.com/cjyanosick"
-              target="_blank">
-              GitHub
-            </a>
+              <a
+                href="https://github.com/cjyanosick"
+                target="_blank">
+                GITHUB
+                <span>↗</span>
+              </a>
 
-            <a
-              class="button button-secondary"
-              href="#"
-              target="_blank">
-              LinkedIn
-            </a>
+              <a
+                href="https://github.com/cjyanosick/cybersecurity-portfolio"
+                target="_blank">
+                PORTFOLIO REPOSITORY
+                <span>↗</span>
+              </a>
+
+              <a href="#">
+                LINKEDIN
+                <span>↗</span>
+              </a>
+
+            </div>
 
           </div>
 
-        </div>
-      </section>
+        </section>
 
-    </main>
 
-    <footer>
-      <div class="container">
-        © 2026 Carter Yanosick • Cybersecurity Portfolio
-      </div>
-    </footer>
+        <footer>
+
+          <span>
+            CARTER YANOSICK // CYBERSECURITY • RISK • CONSULTING
+          </span>
+
+          <span>
+            2026
+          </span>
+
+        </footer>
+
+      </main>
+
+    </div>
 
   </div>
 
+
   <script>
     function checkPw() {
-      const entered = document.getElementById('pw').value;
+
+      const entered = document.getElementById("pw").value;
 
       if (entered === "portfolio2026") {
-        document.getElementById('gate').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
+
+        document.getElementById("gate").style.display = "none";
+        document.getElementById("content").style.display = "block";
+
       } else {
-        document.getElementById('err').style.display = 'block';
+
+        document.getElementById("err").style.display = "block";
+
       }
     }
   </script>
