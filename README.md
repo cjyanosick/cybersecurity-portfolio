@@ -40,10 +40,13 @@ I am a cybersecurity professional building hands-on experience across networking
 
 
 
-## Website
-
-
-
 ## Contact
+
+### Portfolio QR Code
+
+Scan to open the live portfolio:
+
+![Portfolio QR Code](site/assets/qr-code.png)
+
 
 
