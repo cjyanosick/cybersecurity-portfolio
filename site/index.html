@@ -126,13 +126,13 @@
     }
 
     .hero-photo {
-      width: 108px;
-      height: 108px;
-      border-radius: 50%;
+      width: clamp(220px, 22vw, 360px);
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
       overflow: hidden;
       border: 2px solid var(--purple);
-      margin-bottom: 26px;
-      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+      margin-bottom: 30px;
+      box-shadow: 0 20px 50px rgba(139, 92, 246, 0.3);
     }
 
     .hero-photo img {
