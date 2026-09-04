@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ Cybersecurity Portfolio
+# Cybersecurity Portfolio
 ### Carter Yanosick
 
 **Cybersecurity • Technology Risk • Consulting**
@@ -13,13 +13,13 @@
 
 ---
 
-## 👋 About Me
+## About Me
 
 I am a cybersecurity professional building hands-on experience across networking, system security, cryptography, security operations, and secure software development. My primary interests are technology and cyber risk — particularly bridging the gap between technical cybersecurity and business needs to help organizations understand risk, strengthen security, and make informed business decisions.
 
 ---
 
-## 🎯 Goals
+## Goals
 
 - 🔧 Continue developing hands-on cybersecurity engineering and security operations skills
 - 📊 Build experience in cyber risk, security consulting, and cloud security
@@ -29,7 +29,7 @@ I am a cybersecurity professional building hands-on experience across networking
 
 ---
 
-## 🧰 Skills at a Glance
+## Skills at a Glance
 
 **Networking & Security Fundamentals**
 ![TCP/IP](https://img.shields.io/badge/-TCP%2FIP-1a1a2e?style=flat-square) ![DNS](https://img.shields.io/badge/-DNS-1a1a2e?style=flat-square) ![DHCP](https://img.shields.io/badge/-DHCP-1a1a2e?style=flat-square) ![ARP](https://img.shields.io/badge/-ARP-1a1a2e?style=flat-square) ![Firewalls](https://img.shields.io/badge/-Firewalls-1a1a2e?style=flat-square)
@@ -54,7 +54,7 @@ I am a cybersecurity professional building hands-on experience across networking
 
 ---
 
-## 📂 What's In This Repository
+## What's In This Repository
 
 | Folder | What You'll Find |
 |---|---|
@@ -66,13 +66,13 @@ I am a cybersecurity professional building hands-on experience across networking
 
 ---
 
-## 🌐 Website
+## Website
 
 **[cjyanosick.github.io/cybersecurity-portfolio](https://cjyanosick.github.io/cybersecurity-portfolio/)**
 
 ---
 
-## 📬 Contact
+## Contact
 
 <div align="center">
 
