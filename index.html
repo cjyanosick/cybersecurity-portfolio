@@ -1,1 +1,1334 @@
-<h1>Coming soon</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carter Yanosick — cybersecurity, technology risk, and consulting portfolio." />
+
+  <title>Carter Yanosick | Cybersecurity, Risk & Consulting</title>
+
+  <style>
+    :root {
+      --black: #08080b;
+      --black-soft: #111116;
+      --panel: #16161d;
+      --purple: #8b5cf6;
+      --purple-light: #b794f6;
+      --purple-dark: #5b21b6;
+      --text: #f5f3ff;
+      --muted: #aaa6b8;
+      --line: #28252f;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAV
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 8, 11, 0.88);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .brand span {
+      color: var(--purple-light);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--purple);
+      color: white !important;
+      font-weight: 700;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 30%, rgba(139, 92, 246, 0.22), transparent 25%),
+        radial-gradient(circle at 65% 70%, rgba(91, 33, 182, 0.12), transparent 30%);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 70px;
+      padding: 90px 0;
+    }
+
+    .hero-photo {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--purple);
+      margin-bottom: 26px;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .eyebrow {
+      color: var(--purple-light);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.7rem, 7vw, 7.5rem);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--purple-light);
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.12rem;
+      max-width: 690px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--purple-dark);
+    }
+
+    .btn-secondary {
+      border: 1px solid #3d3946;
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--purple);
+      color: var(--purple-light);
+    }
+
+    .hero-panel {
+      background: linear-gradient(145deg, #14131a, #0d0d11);
+      border: 1px solid #2e2a36;
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    }
+
+    .hero-panel h3 {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-weight: 600;
+    }
+
+    .metric {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric:last-child {
+      border-bottom: none;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    /* =========================
+       GENERAL SECTION
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      color: var(--purple-light);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       PROFILE
+    ========================= */
+
+    .profile {
+      background: var(--black-soft);
+    }
+
+    .profile-grid {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 70px;
+    }
+
+    .profile-copy p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 1.04rem;
+    }
+
+    .profile-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .profile-point {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #0d0d12;
+    }
+
+    .profile-point strong {
+      display: block;
+      color: var(--purple-light);
+      margin-bottom: 5px;
+    }
+
+    .profile-point span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience-list {
+      margin-top: 50px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .experience-item {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--black-soft);
+    }
+
+    .experience-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-bottom: 18px;
+    }
+
+    .experience-head h3 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .experience-org {
+      color: var(--purple-light);
+      font-size: 0.92rem;
+    }
+
+    .experience-dates {
+      color: var(--muted);
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .experience-bullets {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .experience-bullets li {
+      color: var(--muted);
+      font-size: 0.94rem;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .experience-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
+    }
+
+    /* =========================
+       TECHNICAL FOUNDATION
+    ========================= */
+
+    .skills-layout {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .skill-block {
+      padding: 30px;
+      border-radius: 18px;
+      background: var(--black-soft);
+      border: 1px solid var(--line);
+    }
+
+    .skill-block h3 {
+      margin-bottom: 12px;
+    }
+
+    .skill-block p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .tools {
+      margin-top: 35px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool {
+      border: 1px solid #383442;
+      background: #0e0e13;
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: #c9c3d9;
+      font-size: 0.8rem;
+    }
+
+    /* =========================
+       CASE STUDY
+    ========================= */
+
+    .case-wrapper {
+      margin-top: 50px;
+      padding: 45px;
+      border-radius: 24px;
+      background:
+        linear-gradient(145deg, #17141f, #0c0c10);
+      border: 1px solid #312b3b;
+    }
+
+    .case-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .case-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      max-width: 720px;
+    }
+
+    .case-status {
+      color: var(--purple-light);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .case-description {
+      color: var(--muted);
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .case-process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .case-step {
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.015);
+    }
+
+    .case-step small {
+      color: var(--purple-light);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .case-step h4 {
+      margin-bottom: 8px;
+    }
+
+    .case-step p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio-list {
+      margin-top: 45px;
+      border-top: 1px solid var(--line);
+    }
+
+    .portfolio-item {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr auto;
+      gap: 30px;
+      align-items: center;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+      transition: 0.2s;
+    }
+
+    .portfolio-item:hover {
+      padding-left: 14px;
+      color: var(--purple-light);
+    }
+
+    .portfolio-item h3 {
+      font-size: 1.1rem;
+    }
+
+    .portfolio-item p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .portfolio-arrow {
+      font-size: 1.4rem;
+    }
+
+    /* =========================
+       CLOSING
+    ========================= */
+
+    .closing {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(139,92,246,0.17), transparent 35%),
+        var(--black-soft);
+    }
+
+    .closing h2 {
+      font-size: clamp(2.8rem, 5.5vw, 5.8rem);
+      line-height: 1;
+      letter-spacing: -4px;
+      max-width: 1000px;
+      margin: 0 auto 28px;
+    }
+
+    .closing h2 span {
+      color: var(--purple-light);
+    }
+
+    .closing p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .contact-title {
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      letter-spacing: -2px;
+      line-height: 1.05;
+    }
+
+    .contact-links {
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-links a {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      transition: 0.2s;
+    }
+
+    .contact-links a:hover {
+      color: var(--purple-light);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      color: #6f6a7c;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 950px) {
+      .hero-inner,
+      .profile-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-panel {
+        max-width: 650px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .skills-layout,
+      .case-process {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-item {
+        grid-template-columns: 1fr auto;
+      }
+
+      .portfolio-item p {
+        display: none;
+      }
+
+      .case-top {
+        flex-direction: column;
+      }
+
+      .closing h2 {
+        letter-spacing: -2px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+
+    <header>
+
+      <div class="container nav">
+
+        <div class="brand">
+          Carter <span>Yanosick</span>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#profile">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#work">Work</a>
+          <a href="#portfolio">Portfolio</a>
+          <a class="nav-cta" href="#contact">Connect</a>
+        </nav>
+
+      </div>
+
+    </header>
+
+
+    <main>
+
+      <!-- HERO -->
+
+      <section class="hero">
+
+        <div class="container hero-inner">
+
+          <div>
+
+            <div class="hero-photo">
+              <img src="assets/headshot.png" alt="Carter Yanosick" />
+            </div>
+
+            <div class="eyebrow">
+              Cybersecurity • Technology Risk • Consulting
+            </div>
+
+            <h1>
+              Understand the risk.
+              <span>Translate it into action.</span>
+            </h1>
+
+            <p class="hero-copy">
+              I am building my career at the intersection of cybersecurity,
+              technology risk, and consulting — developing the technical
+              depth to understand security problems and the judgment and
+              communication skills to help organizations decide what to do next.
+            </p>
+
+            <div class="hero-actions">
+
+              <a href="#work" class="btn btn-primary">
+                View Featured Work
+              </a>
+
+              <a
+                href="https://github.com/cjyanosick/cybersecurity-portfolio"
+                target="_blank" rel="noopener noreferrer"
+                class="btn btn-secondary">
+                Explore GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero-panel">
+
+            <h3>Professional Focus</h3>
+
+            <div class="metric">
+              <div class="metric-label">CORE DISCIPLINE</div>
+              <div class="metric-value">Cybersecurity</div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-label">BUSINESS LENS</div>
+              <div class="metric-value">Technology & Cyber Risk</div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-label">CAREER DIRECTION</div>
+              <div class="metric-value">Security Consulting</div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-label">DEVELOPMENT</div>
+              <div class="metric-value">Interpersonal Leadership</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PROFILE -->
+
+      <section class="profile" id="profile">
+
+        <div class="container">
+
+          <div class="section-label">
+            About
+          </div>
+
+          <h2 class="section-title">
+            Cybersecurity with a business and leadership mindset.
+          </h2>
+
+          <div class="profile-grid">
+
+            <div class="profile-copy">
+
+              <p>
+                I am a cybersecurity professional building hands-on experience
+                across networking, system security, cryptography, security
+                operations, secure software development, cyber risk, and governance.
+              </p>
+
+              <p>
+                My primary interest is the point where technical security
+                becomes an organizational decision. Finding the vulnerability
+                matters, but so does understanding its severity, determining
+                the business impact, explaining the risk clearly, and deciding
+                what should happen next.
+              </p>
+
+              <p>
+                I am continuing to build toward roles that combine cybersecurity,
+                risk analysis, consulting, communication, and leadership.
+              </p>
+
+            </div>
+
+
+            <div class="profile-points">
+
+              <div class="profile-point">
+                <strong>Technical credibility</strong>
+                <span>
+                  Build enough technical depth to understand how and why
+                  security issues occur.
+                </span>
+              </div>
+
+              <div class="profile-point">
+                <strong>Risk awareness</strong>
+                <span>
+                  Connect technical findings to exposure, impact, and
+                  organizational priorities.
+                </span>
+              </div>
+
+              <div class="profile-point">
+                <strong>Clear communication</strong>
+                <span>
+                  Explain security issues in a way both technical and
+                  business stakeholders can act on.
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- EXPERIENCE -->
+
+      <section id="experience">
+
+        <div class="container">
+
+          <div class="section-label">
+            Experience
+          </div>
+
+          <h2 class="section-title">
+            Hands-on across enterprise and law enforcement environments.
+          </h2>
+
+          <p class="section-intro">
+            Experience spanning enterprise security operations, threat
+            intelligence in support of federal law enforcement, and identity
+            and access management.
+          </p>
+
+
+          <div class="experience-list">
+
+            <div class="experience-item">
+
+              <div class="experience-head">
+                <div>
+                  <h3>Cybersecurity Analyst</h3>
+                  <div class="experience-org">Arconic Corporation — Pittsburgh, PA</div>
+                </div>
+                <div class="experience-dates">June 2025 – January 2026</div>
+              </div>
+
+              <ul class="experience-bullets">
+                <li>Monitored and investigated security events across enterprise SIEM and DLP platforms (Netskope, Digital Guardian), identifying and escalating data exfiltration attempts and insider threat indicators.</li>
+                <li>Conducted alert triage and incident validation by correlating logs, endpoint telemetry, and network activity, reducing false positive rates and streamlining escalation workflows.</li>
+                <li>Strengthened endpoint detection and response capabilities using Cortex XDR in collaboration with cross-functional IT and security teams.</li>
+                <li>Led vulnerability remediation and patch management across on-premises and cloud environments, directly reducing exposure to known CVEs.</li>
+                <li>Contributed to development and refinement of security policies and controls aligned with NIST CSF and ISO 27001, supporting audit readiness and compliance reporting.</li>
+                <li>Designed and deployed phishing simulation campaigns via KnowBe4 across the enterprise user base, measurably improving security awareness.</li>
+              </ul>
+
+            </div>
+
+
+            <div class="experience-item">
+
+              <div class="experience-head">
+                <div>
+                  <h3>Intelligence Analyst</h3>
+                  <div class="experience-org">National Cyber-Forensics and Training Alliance (NCFTA) — Pittsburgh, PA</div>
+                </div>
+                <div class="experience-dates">January 2025 – April 2025</div>
+              </div>
+
+              <ul class="experience-bullets">
+                <li>Conducted cyber threat intelligence (CTI) analysis using OSINT tools including SpyCloud, Cerberus, and Spokeo to identify emerging threat actors, financial cybercrime networks, and infrastructure patterns.</li>
+                <li>Correlated indicators of compromise (IOCs) across multiple datasets to support proactive threat-hunting efforts and early detection of criminal activity.</li>
+                <li>Produced intelligence reports and technical briefings delivered to FBI, Secret Service, and private-sector financial partners, translating raw threat data into prioritized, actionable intelligence.</li>
+                <li>Tracked financially motivated cybercrime trends including fraud, account takeover, and dark web marketplace activity, contributing to active law enforcement investigations.</li>
+              </ul>
+
+            </div>
+
+
+            <div class="experience-item">
+
+              <div class="experience-head">
+                <div>
+                  <h3>IT Help Desk Analyst</h3>
+                  <div class="experience-org">Duquesne University — Pittsburgh, PA</div>
+                </div>
+                <div class="experience-dates">May 2024 – May 2025</div>
+              </div>
+
+              <ul class="experience-bullets">
+                <li>Resolved weekly support tickets related to access control, endpoint issues, and authentication failures across a multi-platform university environment.</li>
+                <li>Administered identity and access management (IAM) processes including MFA enrollment (Duo), account provisioning/deprovisioning, and least-privilege enforcement.</li>
+                <li>Enforced security best practices during user interactions, reducing risk associated with misconfigured access and credential misuse.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- TECHNICAL FOUNDATION -->
+
+      <section>
+
+        <div class="container">
+
+          <div class="section-label">
+            Technical Foundation
+          </div>
+
+          <h2 class="section-title">
+            The technical work behind the strategy.
+          </h2>
+
+          <p class="section-intro">
+            My consulting and risk interests are supported by continued
+            hands-on work across core cybersecurity disciplines.
+          </p>
+
+
+          <div class="skills-layout">
+
+            <div class="skill-block">
+
+              <h3>Network & System Security</h3>
+
+              <p>
+                Networking, packet analysis, Linux, SSH, web servers,
+                firewall concepts, DNS, DHCP, ARP, and security troubleshooting.
+              </p>
+
+            </div>
+
+
+            <div class="skill-block">
+
+              <h3>Security Operations</h3>
+
+              <p>
+                Logs, alerts, security monitoring, attack identification,
+                defensive controls, and incident-oriented analysis.
+              </p>
+
+            </div>
+
+
+            <div class="skill-block">
+
+              <h3>Cryptography & PKI</h3>
+
+              <p>
+                TLS, certificates, certificate chains, public-key
+                cryptography, symmetric encryption, PKI, and OpenSSL.
+              </p>
+
+            </div>
+
+
+            <div class="skill-block">
+
+              <h3>Cyber Risk & GRC</h3>
+
+              <p>
+                Security controls, governance, frameworks, compliance concepts,
+                severity assessment, remediation, and risk communication.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="tools">
+
+            <span class="tool">Wireshark</span>
+            <span class="tool">Nmap</span>
+            <span class="tool">OpenSSL</span>
+            <span class="tool">Linux</span>
+            <span class="tool">Kali</span>
+            <span class="tool">Ubuntu</span>
+            <span class="tool">SSH</span>
+            <span class="tool">Python</span>
+            <span class="tool">Git</span>
+            <span class="tool">GitHub</span>
+            <span class="tool">TLS</span>
+            <span class="tool">PKI</span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CASE STUDY -->
+
+      <section id="work">
+
+        <div class="container">
+
+          <div class="section-label">
+            Featured Work
+          </div>
+
+          <h2 class="section-title">
+            Building with privacy and security in mind.
+          </h2>
+
+
+          <div class="case-wrapper">
+
+            <div class="case-top">
+
+              <div class="case-title">
+                ASTI — A Local-First Personal AI Assistant
+              </div>
+
+              <div class="case-status">
+                IN DEVELOPMENT
+              </div>
+
+            </div>
+
+
+            <p class="case-description">
+              A personal AI assistant built around a simple principle: private
+              by architecture, local by default, cloud by choice. It runs
+              entirely on local hardware through Ollama, with no cloud
+              dependency required — and every architectural decision is made
+              with future encryption and user control in mind, not bolted on
+              after the fact.
+            </p>
+
+
+            <div class="case-process">
+
+              <div class="case-step">
+
+                <small>01 / FOUNDATION</small>
+
+                <h4>Local-first by default</h4>
+
+                <p>
+                  Runs on local models through Ollama, keeping data on the
+                  user's own machine instead of a cloud-managed profile.
+                </p>
+
+              </div>
+
+
+              <div class="case-step">
+
+                <small>02 / PRIVACY ENGINEERING</small>
+
+                <h4>Designed for encryption before it's needed</h4>
+
+                <p>
+                  Migrating memory access onto a dedicated storage abstraction
+                  layer now, so encryption at rest and OS-level key management
+                  can be added later without a rewrite.
+                </p>
+
+              </div>
+
+
+              <div class="case-step">
+
+                <small>03 / ROADMAP</small>
+
+                <h4>Expanding deliberately</h4>
+
+                <p>
+                  New memory categories and features stay paused until the
+                  secure storage foundation is solid — capability follows
+                  security, not the other way around.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/cjyanosick/asti-ai-assistant"
+              target="_blank" rel="noopener noreferrer">
+              View Project
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PORTFOLIO -->
+
+      <section id="portfolio">
+
+        <div class="container">
+
+          <div class="section-label">
+            Portfolio
+          </div>
+
+          <h2 class="section-title">
+            Explore the work.
+          </h2>
+
+
+          <div class="portfolio-list">
+
+            <a
+              class="portfolio-item"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/labs"
+              target="_blank" rel="noopener noreferrer">
+
+              <h3>Hands-On Labs</h3>
+
+              <p>
+                Home lab work — hardening exercises, virtualization,
+                and hands-on security practice.
+              </p>
+
+              <div class="portfolio-arrow">↗</div>
+
+            </a>
+
+
+            <a
+              class="portfolio-item"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/grc"
+              target="_blank" rel="noopener noreferrer">
+
+              <h3>Cyber Risk & GRC</h3>
+
+              <p>
+                Governance, controls, frameworks, risk analysis,
+                compliance, and consulting-oriented work.
+              </p>
+
+              <div class="portfolio-arrow">↗</div>
+
+            </a>
+
+
+            <a
+              class="portfolio-item"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/research-and-writeups"
+              target="_blank" rel="noopener noreferrer">
+
+              <h3>Research & Analysis</h3>
+
+              <p>
+                Cybersecurity research, incident analysis,
+                technical explanations, and written assessments.
+              </p>
+
+              <div class="portfolio-arrow">↗</div>
+
+            </a>
+
+
+            <a
+              class="portfolio-item"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
+              target="_blank" rel="noopener noreferrer">
+
+              <h3>TLS Security Assessments</h3>
+
+              <p>
+                Certificate analysis, technical findings,
+                severity ratings, risk impact, and remediation.
+              </p>
+
+              <div class="portfolio-arrow">↗</div>
+
+            </a>
+
+
+            <a
+              class="portfolio-item"
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/certifications-and-skills"
+              target="_blank" rel="noopener noreferrer">
+
+              <h3>Professional Development</h3>
+
+              <p>
+                Skills, tools, certifications, labs,
+                and continued cybersecurity development.
+              </p>
+
+              <div class="portfolio-arrow">↗</div>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CLOSING -->
+
+      <section class="closing">
+
+        <div class="container">
+
+          <h2>
+            Find the issue.
+            Understand the risk.
+            <span>Translate it into action.</span>
+          </h2>
+
+          <p>
+            My goal is to combine technical cybersecurity knowledge with
+            business awareness and clear communication to help organizations
+            make stronger security decisions — and to keep growing toward
+            more senior, leadership-facing roles over time.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- CONTACT -->
+
+      <section id="contact">
+
+        <div class="container contact-grid">
+
+          <div>
+
+            <div class="section-label">
+              Connect
+            </div>
+
+            <div class="contact-title">
+              Explore my work and follow my development.
+            </div>
+
+          </div>
+
+          <div class="contact-links">
+
+            <a
+              href="https://github.com/cjyanosick"
+              target="_blank" rel="noopener noreferrer">
+
+              GitHub
+              <span>↗</span>
+
+            </a>
+
+
+            <a
+              href="https://github.com/cjyanosick/cybersecurity-portfolio"
+              target="_blank" rel="noopener noreferrer">
+
+              Portfolio Repository
+              <span>↗</span>
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/carter-yanosick-9637392a3/" target="_blank" rel="noopener noreferrer">
+
+              LinkedIn
+              <span>↗</span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <footer>
+
+      <div class="container footer-inner">
+
+        <span>
+          © 2026 Carter Yanosick
+        </span>
+
+        <span>
+          Cybersecurity • Risk • Business Translation
+        </span>
+
+      </div>
+
+    </footer>
+
+</body>
+</html>
