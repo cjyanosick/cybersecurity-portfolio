@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carter Yanosick — cybersecurity, technology risk, and consulting portfolio." />
 
   <title>Carter Yanosick | Cybersecurity, Risk & Consulting</title>
 
@@ -45,79 +46,6 @@
     .container {
       width: min(1180px, 90%);
       margin: 0 auto;
-    }
-
-    /* =========================
-       STAGING GATE
-    ========================= */
-
-    #gate {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 35%),
-        var(--black);
-      padding: 30px;
-    }
-
-    .gate-card {
-      width: min(440px, 100%);
-      background: var(--black-soft);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 36px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-    }
-
-    .gate-card h1 {
-      margin-bottom: 12px;
-      font-size: 2rem;
-    }
-
-    .gate-card p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .gate-card input {
-      width: 100%;
-      padding: 14px 15px;
-      background: #0d0d12;
-      color: white;
-      border: 1px solid #34303d;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    .gate-card input:focus {
-      border-color: var(--purple);
-    }
-
-    .gate-card button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      background: var(--purple);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-
-    .gate-card button:hover {
-      background: var(--purple-dark);
-    }
-
-    #err {
-      display: none;
-      color: #ff7f9c;
-      margin-top: 14px;
-      margin-bottom: 0;
     }
 
     /* =========================
@@ -195,6 +123,23 @@
       align-items: center;
       gap: 70px;
       padding: 90px 0;
+    }
+
+    .hero-photo {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--purple);
+      margin-bottom: 26px;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .eyebrow {
@@ -306,9 +251,9 @@
     .section-label {
       color: var(--purple-light);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.78rem;
-      font-weight: 700;
+      letter-spacing: 1.5px;
+      font-size: 1.15rem;
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
@@ -370,98 +315,69 @@
     }
 
     /* =========================
-       CONSULTING APPROACH
+       EXPERIENCE
     ========================= */
 
-    .approach-grid {
+    .experience-list {
       margin-top: 50px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 22px;
     }
 
-    .approach-card {
+    .experience-item {
+      padding: 30px;
       border: 1px solid var(--line);
-      background: var(--black-soft);
       border-radius: 18px;
-      padding: 28px;
-      min-height: 260px;
-      transition: 0.25s ease;
+      background: var(--black-soft);
     }
 
-    .approach-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--purple);
-    }
-
-    .approach-number {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
+    .experience-head {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(139, 92, 246, 0.12);
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-bottom: 18px;
+    }
+
+    .experience-head h3 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .experience-org {
       color: var(--purple-light);
-      font-weight: bold;
-      margin-bottom: 35px;
+      font-size: 0.92rem;
     }
 
-    .approach-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.25rem;
-    }
-
-    .approach-card p {
+    .experience-dates {
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: 0.85rem;
+      white-space: nowrap;
     }
 
-    /* =========================
-       LEADERSHIP
-    ========================= */
-
-    .leadership {
-      background:
-        linear-gradient(135deg, rgba(91,33,182,0.19), transparent 55%),
-        var(--black-soft);
-    }
-
-    .leadership-layout {
+    .experience-bullets {
+      list-style: none;
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 80px;
-      align-items: start;
+      gap: 10px;
     }
 
-    .leadership-quote {
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -3px;
-    }
-
-    .leadership-quote span {
-      color: var(--purple-light);
-    }
-
-    .leadership-points {
-      display: grid;
-      gap: 20px;
-    }
-
-    .leadership-item {
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 24px;
-    }
-
-    .leadership-item h3 {
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-    }
-
-    .leadership-item p {
+    .experience-bullets li {
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .experience-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
     }
 
     /* =========================
@@ -695,13 +611,8 @@
     @media (max-width: 950px) {
       .hero-inner,
       .profile-grid,
-      .leadership-layout,
       .contact-grid {
         grid-template-columns: 1fr;
-      }
-
-      .approach-grid {
-        grid-template-columns: repeat(2, 1fr);
       }
 
       .hero {
@@ -722,7 +633,6 @@
         letter-spacing: -3px;
       }
 
-      .approach-grid,
       .skills-layout,
       .case-process {
         grid-template-columns: 1fr;
@@ -753,41 +663,6 @@
 
 <body>
 
-  <!-- STAGING PASSWORD GATE -->
-
-  <div id="gate">
-
-    <div class="gate-card">
-
-      <h1>Portfolio Preview</h1>
-
-      <p>
-        This portfolio is currently being reviewed in staging.
-        Enter the preview password to continue.
-      </p>
-
-      <input
-        type="password"
-        id="pw"
-        placeholder="Password"
-        onkeydown="if(event.key === 'Enter') checkPw()"
-      />
-
-      <button onclick="checkPw()">
-        Enter Portfolio
-      </button>
-
-      <p id="err">
-        Incorrect password.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div id="content" style="display:none;">
-
     <!-- NAV -->
 
     <header>
@@ -800,8 +675,7 @@
 
         <nav class="nav-links">
           <a href="#profile">About</a>
-          <a href="#approach">Approach</a>
-          <a href="#leadership">Leadership</a>
+          <a href="#experience">Experience</a>
           <a href="#work">Work</a>
           <a href="#portfolio">Portfolio</a>
           <a class="nav-cta" href="#contact">Connect</a>
@@ -822,20 +696,24 @@
 
           <div>
 
+            <div class="hero-photo">
+              <img src="assets/headshot.jpg" alt="Carter Yanosick" />
+            </div>
+
             <div class="eyebrow">
               Cybersecurity • Technology Risk • Consulting
             </div>
 
             <h1>
               Understand the risk.
-              <span>Lead the response.</span>
+              <span>Translate it into action.</span>
             </h1>
 
             <p class="hero-copy">
               I am building my career at the intersection of cybersecurity,
-              technology risk, consulting, and leadership — developing the
-              technical depth to understand security problems and the judgment
-              and communication skills to help organizations decide what to do next.
+              technology risk, and consulting — developing the technical
+              depth to understand security problems and the judgment and
+              communication skills to help organizations decide what to do next.
             </p>
 
             <div class="hero-actions">
@@ -846,7 +724,7 @@
 
               <a
                 href="https://github.com/cjyanosick/cybersecurity-portfolio"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 class="btn btn-secondary">
                 Explore GitHub
               </a>
@@ -877,7 +755,7 @@
 
             <div class="metric">
               <div class="metric-label">DEVELOPMENT</div>
-              <div class="metric-value">Technical + Leadership</div>
+              <div class="metric-value">Interpersonal Leadership</div>
             </div>
 
           </div>
@@ -962,160 +840,86 @@
       </section>
 
 
-      <!-- APPROACH -->
+      <!-- EXPERIENCE -->
 
-      <section id="approach">
+      <section id="experience">
 
         <div class="container">
 
           <div class="section-label">
-            Consulting Mindset
+            Experience
           </div>
 
           <h2 class="section-title">
-            From technical finding to business decision.
+            Hands-on across enterprise and law enforcement environments.
           </h2>
 
           <p class="section-intro">
-            The security mindset I am developing follows a simple process:
-            identify what is happening, understand the risk, communicate it
-            clearly, and recommend an actionable response.
+            Experience spanning enterprise security operations, threat
+            intelligence in support of federal law enforcement, and identity
+            and access management.
           </p>
 
 
-          <div class="approach-grid">
+          <div class="experience-list">
 
-            <div class="approach-card">
+            <div class="experience-item">
 
-              <div class="approach-number">1</div>
+              <div class="experience-head">
+                <div>
+                  <h3>Cybersecurity Analyst</h3>
+                  <div class="experience-org">Arconic Corporation — Pittsburgh, PA</div>
+                </div>
+                <div class="experience-dates">June 2025 – January 2026</div>
+              </div>
 
-              <h3>Assess</h3>
-
-              <p>
-                Examine systems, configurations, traffic, controls,
-                certificates, logs, and other security evidence.
-              </p>
-
-            </div>
-
-
-            <div class="approach-card">
-
-              <div class="approach-number">2</div>
-
-              <h3>Understand</h3>
-
-              <p>
-                Determine severity, exposure, business impact,
-                and why the issue matters to the organization.
-              </p>
+              <ul class="experience-bullets">
+                <li>Monitored and investigated security events across enterprise SIEM and DLP platforms (Netskope, Digital Guardian), identifying and escalating data exfiltration attempts and insider threat indicators.</li>
+                <li>Conducted alert triage and incident validation by correlating logs, endpoint telemetry, and network activity, reducing false positive rates and streamlining escalation workflows.</li>
+                <li>Strengthened endpoint detection and response capabilities using Cortex XDR in collaboration with cross-functional IT and security teams.</li>
+                <li>Led vulnerability remediation and patch management across on-premises and cloud environments, directly reducing exposure to known CVEs.</li>
+                <li>Contributed to development and refinement of security policies and controls aligned with NIST CSF and ISO 27001, supporting audit readiness and compliance reporting.</li>
+                <li>Designed and deployed phishing simulation campaigns via KnowBe4 across the enterprise user base, measurably improving security awareness.</li>
+              </ul>
 
             </div>
 
 
-            <div class="approach-card">
+            <div class="experience-item">
 
-              <div class="approach-number">3</div>
+              <div class="experience-head">
+                <div>
+                  <h3>Intelligence Analyst</h3>
+                  <div class="experience-org">National Cyber-Forensics and Training Alliance (NCFTA) — Pittsburgh, PA</div>
+                </div>
+                <div class="experience-dates">January 2025 – April 2025</div>
+              </div>
 
-              <h3>Communicate</h3>
-
-              <p>
-                Translate technical complexity into clear information
-                for engineers, management, and business stakeholders.
-              </p>
-
-            </div>
-
-
-            <div class="approach-card">
-
-              <div class="approach-number">4</div>
-
-              <h3>Act</h3>
-
-              <p>
-                Recommend controls, prioritize remediation,
-                explain tradeoffs, and support informed decisions.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- LEADERSHIP -->
-
-      <section class="leadership" id="leadership">
-
-        <div class="container leadership-layout">
-
-          <div>
-
-            <div class="section-label">
-              Cyber Leadership
-            </div>
-
-            <div class="leadership-quote">
-              Leadership means turning
-              <span>security knowledge into action.</span>
-            </div>
-
-          </div>
-
-
-          <div class="leadership-points">
-
-            <div class="leadership-item">
-
-              <h3>Make complexity understandable.</h3>
-
-              <p>
-                Technical expertise has greater value when people outside
-                the technical team can understand the risk and the decision
-                that needs to be made.
-              </p>
+              <ul class="experience-bullets">
+                <li>Conducted cyber threat intelligence (CTI) analysis using OSINT tools including SpyCloud, Cerberus, and Spokeo to identify emerging threat actors, financial cybercrime networks, and infrastructure patterns.</li>
+                <li>Correlated indicators of compromise (IOCs) across multiple datasets to support proactive threat-hunting efforts and early detection of criminal activity.</li>
+                <li>Produced intelligence reports and technical briefings delivered to FBI, Secret Service, and private-sector financial partners, translating raw threat data into prioritized, actionable intelligence.</li>
+                <li>Tracked financially motivated cybercrime trends including fraud, account takeover, and dark web marketplace activity, contributing to active law enforcement investigations.</li>
+              </ul>
 
             </div>
 
 
-            <div class="leadership-item">
+            <div class="experience-item">
 
-              <h3>Prioritize what matters.</h3>
+              <div class="experience-head">
+                <div>
+                  <h3>IT Help Desk Analyst</h3>
+                  <div class="experience-org">Duquesne University — Pittsburgh, PA</div>
+                </div>
+                <div class="experience-dates">May 2024 – May 2025</div>
+              </div>
 
-              <p>
-                Security resources are limited. Good judgment means identifying
-                which risks require immediate action and which can be managed
-                differently.
-              </p>
-
-            </div>
-
-
-            <div class="leadership-item">
-
-              <h3>Balance security and business needs.</h3>
-
-              <p>
-                Strong cybersecurity supports the organization rather than
-                operating separately from it. Recommendations need to consider
-                impact, feasibility, cost, and risk.
-              </p>
-
-            </div>
-
-
-            <div class="leadership-item">
-
-              <h3>Own the next step.</h3>
-
-              <p>
-                A finding is only useful if it leads to action. Leadership means
-                helping move analysis toward a clear recommendation and response.
-              </p>
+              <ul class="experience-bullets">
+                <li>Resolved weekly support tickets related to access control, endpoint issues, and authentication failures across a multi-platform university environment.</li>
+                <li>Administered identity and access management (IAM) processes including MFA enrollment (Duo), account provisioning/deprovisioning, and least-privilege enforcement.</li>
+                <li>Enforced security best practices during user interactions, reducing risk associated with misconfigured access and credential misuse.</li>
+              </ul>
 
             </div>
 
@@ -1231,7 +1035,7 @@
           </div>
 
           <h2 class="section-title">
-            Security analysis through a consulting lens.
+            Building with privacy and security in mind.
           </h2>
 
 
@@ -1240,7 +1044,7 @@
             <div class="case-top">
 
               <div class="case-title">
-                TLS & Certificate Security Assessment
+                ASTI — A Local-First Personal AI Assistant
               </div>
 
               <div class="case-status">
@@ -1251,10 +1055,12 @@
 
 
             <p class="case-description">
-              A comparative review of TLS and certificate configurations
-              across multiple targets. The project combines technical validation
-              with risk analysis to show how raw findings can be translated
-              into severity, impact, and specific remediation.
+              A personal AI assistant built around a simple principle: private
+              by architecture, local by default, cloud by choice. It runs
+              entirely on local hardware through Ollama, with no cloud
+              dependency required — and every architectural decision is made
+              with future encryption and user control in mind, not bolted on
+              after the fact.
             </p>
 
 
@@ -1262,13 +1068,13 @@
 
               <div class="case-step">
 
-                <small>01 / FINDING</small>
+                <small>01 / FOUNDATION</small>
 
-                <h4>Identify the issue</h4>
+                <h4>Local-first by default</h4>
 
                 <p>
-                  Review certificate condition, protocol support,
-                  cryptographic configuration, and technical weaknesses.
+                  Runs on local models through Ollama, keeping data on the
+                  user's own machine instead of a cloud-managed profile.
                 </p>
 
               </div>
@@ -1276,13 +1082,14 @@
 
               <div class="case-step">
 
-                <small>02 / IMPACT</small>
+                <small>02 / PRIVACY ENGINEERING</small>
 
-                <h4>Understand the risk</h4>
+                <h4>Designed for encryption before it's needed</h4>
 
                 <p>
-                  Evaluate what the weakness could allow an attacker to do
-                  and how significant the exposure is.
+                  Migrating memory access onto a dedicated storage abstraction
+                  layer now, so encryption at rest and OS-level key management
+                  can be added later without a rewrite.
                 </p>
 
               </div>
@@ -1290,13 +1097,14 @@
 
               <div class="case-step">
 
-                <small>03 / RESPONSE</small>
+                <small>03 / ROADMAP</small>
 
-                <h4>Recommend action</h4>
+                <h4>Expanding deliberately</h4>
 
                 <p>
-                  Provide a specific configuration change or remediation
-                  that directly addresses the identified issue.
+                  New memory categories and features stay paused until the
+                  secure storage foundation is solid — capability follows
+                  security, not the other way around.
                 </p>
 
               </div>
@@ -1306,8 +1114,8 @@
 
             <a
               class="btn btn-secondary"
-              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
-              target="_blank">
+              href="https://github.com/cjyanosick/asti-ai-assistant"
+              target="_blank" rel="noopener noreferrer">
               View Project
             </a>
 
@@ -1337,14 +1145,14 @@
 
             <a
               class="portfolio-item"
-              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/soc-tools"
-              target="_blank">
+              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/labs"
+              target="_blank" rel="noopener noreferrer">
 
-              <h3>Security Operations</h3>
+              <h3>Hands-On Labs</h3>
 
               <p>
-                Defensive tooling, detection concepts, monitoring,
-                and security operations work.
+                Home lab work — hardening exercises, virtualization,
+                and hands-on security practice.
               </p>
 
               <div class="portfolio-arrow">↗</div>
@@ -1355,7 +1163,7 @@
             <a
               class="portfolio-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/grc"
-              target="_blank">
+              target="_blank" rel="noopener noreferrer">
 
               <h3>Cyber Risk & GRC</h3>
 
@@ -1372,7 +1180,7 @@
             <a
               class="portfolio-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/research-and-writeups"
-              target="_blank">
+              target="_blank" rel="noopener noreferrer">
 
               <h3>Research & Analysis</h3>
 
@@ -1389,7 +1197,7 @@
             <a
               class="portfolio-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/tls-audits"
-              target="_blank">
+              target="_blank" rel="noopener noreferrer">
 
               <h3>TLS Security Assessments</h3>
 
@@ -1405,25 +1213,8 @@
 
             <a
               class="portfolio-item"
-              href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/presentations"
-              target="_blank">
-
-              <h3>Security Communication</h3>
-
-              <p>
-                Presentations and cybersecurity material focused
-                on communicating technical concepts clearly.
-              </p>
-
-              <div class="portfolio-arrow">↗</div>
-
-            </a>
-
-
-            <a
-              class="portfolio-item"
               href="https://github.com/cjyanosick/cybersecurity-portfolio/tree/main/certifications-and-skills"
-              target="_blank">
+              target="_blank" rel="noopener noreferrer">
 
               <h3>Professional Development</h3>
 
@@ -1452,13 +1243,14 @@
           <h2>
             Find the issue.
             Understand the risk.
-            <span>Lead the response.</span>
+            <span>Translate it into action.</span>
           </h2>
 
           <p>
-            My goal is to combine technical cybersecurity knowledge
-            with business awareness, clear communication, and leadership
-            to help organizations make stronger security decisions.
+            My goal is to combine technical cybersecurity knowledge with
+            business awareness and clear communication to help organizations
+            make stronger security decisions — and to keep growing toward
+            more senior, leadership-facing roles over time.
           </p>
 
         </div>
@@ -1484,18 +1276,11 @@
 
           </div>
 
-            <div class="qr-section">
-              <h3>View My Portfolio</h3>
-              <p>Scan the QR code to open the live portfolio.</p>
-              <img src="assets/qr-code.png" alt="QR code linking to cybersecurity portfolio" width="180">
-            </div>
-
-
           <div class="contact-links">
 
             <a
               href="https://github.com/cjyanosick"
-              target="_blank">
+              target="_blank" rel="noopener noreferrer">
 
               GitHub
               <span>↗</span>
@@ -1505,7 +1290,7 @@
 
             <a
               href="https://github.com/cjyanosick/cybersecurity-portfolio"
-              target="_blank">
+              target="_blank" rel="noopener noreferrer">
 
               Portfolio Repository
               <span>↗</span>
@@ -1513,7 +1298,7 @@
             </a>
 
 
-            <a href="#">
+            <a href="https://www.linkedin.com/in/carter-yanosick-9637392a3/" target="_blank" rel="noopener noreferrer">
 
               LinkedIn
               <span>↗</span>
@@ -1538,15 +1323,12 @@
         </span>
 
         <span>
-          Cybersecurity • Risk • Consulting • Leadership
+          Cybersecurity • Risk • Business Translation
         </span>
 
       </div>
 
     </footer>
-
-  </div>
-
 
 </body>
 </html>
